@@ -12,17 +12,11 @@ packages (formulae) on macOS and Linux.
 
 See more at https://docs.brew.sh/Taps
 
-## How do I install packages from here?
-
-```sh
-brew install akeylesslabs/tap/name
-```
-
-You can also only add the tap which makes formulae within it
-available in search results (`brew search` output):
+## How do I install Akeyless CLI using Homebrew (MacOS Only)?
 
 ```sh
 brew tap akeylesslabs/tap
+brew install akeylesslabs/tap/akeyless
 ```
 
 Note: to clone the tap via SSH you will need to use:
@@ -35,12 +29,3 @@ While you may search across taps, it is necessary to always use
 fully qualified name (incl. the `akeylesslabs/tap/` prefix)
 when refering to formulae in external taps such as this one
 outside of search.
-
-## What packages are available?
-
-With the following commands, you can install the latest version of Akeyless CLI:
-```sh
-# Formulae
-brew install akeylesslabs/tap/akeyless
-```
-
