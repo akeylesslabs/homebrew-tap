@@ -16,6 +16,12 @@ jobs:
       security-events: write
       actions: read
       contents: read
+    
+    strategy:
+      fail-fast: false
+      matrix:
+        language: [ 'ruby' ]
+
 
     steps:
     - name: Checkout repository
@@ -23,12 +29,14 @@ jobs:
 
     - name: Initialize CodeQL
       uses: github/codeql-action/init@v3
+      with:
+        languages: ${{ matrix.language }}
+
 
     - name: Perform CodeQL Analysis
       uses: github/codeql-action/analyze@v3
 
-    - name: Filter SARIF file
-      run: |
-        npm install -g advanced-security/filter-sarif
-        filter-sarif --input codeql-results.sarif --output filtered-results.sarif --severity HIGH
-      working-directory: ${{ github.workspace }}
+    - run: |
+        echo "Run, Build Application using script"
+        ./location_of_script_within_repo/buildscript.sh
+
