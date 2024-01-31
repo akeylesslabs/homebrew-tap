@@ -26,3 +26,9 @@ jobs:
 
     - name: Perform CodeQL Analysis
       uses: github/codeql-action/analyze@v3
+
+    - name: Filter SARIF file
+      run: |
+        npm install -g advanced-security/filter-sarif
+        filter-sarif --input codeql-results.sarif --output filtered-results.sarif --severity HIGH
+      working-directory: ${{ github.workspace }}
