@@ -1,11 +1,11 @@
 class Akeyless < Formula
   desc "Akeyless CLI"
   homepage "https://www.akeyless.io"
-  version "1.140.0"
+  version "1.141.0"
 
   if OS.mac? && Hardware::CPU.intel?
     url "https://download.akeyless.io/Akeyless_Artifacts/MacOS/CLI/akeyless"
-    sha256 "b80f2e10bd31c45bee1807f184ea1e9227a5db2d01c1ffbf4df4066d2df9aef8"
+    sha256 "95579f001f295e8d4473302462ac40f6f31f80bb679eddaf875ab89b5ed7ed73"
     def install
       bin.install "akeyless"
     end
@@ -13,7 +13,7 @@ class Akeyless < Formula
 
   if OS.mac? && Hardware::CPU.arm?
     url "https://download.akeyless.io/Akeyless_Artifacts/MacOS/CLI/akeyless-arm"
-    sha256 "95c8140a5801940cb9238656544e3c8b6a5b4adbc153b92ffcb26d671585d071"
+    sha256 "943d0350a2fb818e79ba77b5138e3e866524984f5c26962d267ceccb57ccb8e3"
     def install
       bin.install "akeyless-arm" => "akeyless"
     end
